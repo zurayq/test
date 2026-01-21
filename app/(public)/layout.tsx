@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/layout/navbar";
 import dynamic from "next/dynamic";
 
@@ -6,11 +8,7 @@ const BackgroundCanvas = dynamic(
     { ssr: false }
 );
 
-export default function PublicLayout({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function PublicLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="relative flex min-h-screen flex-col">
             <BackgroundCanvas />
