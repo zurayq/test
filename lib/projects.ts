@@ -5,11 +5,18 @@ import path from 'path';
 export interface Project {
     id: string;
     title: string;
-    description: string;
+    description: string; // Short summary
+    content?: string; // Markdown details
     techStack: string[];
     link?: string;
     github?: string;
-    imageUrl?: string;
+    images?: string[]; // Array of image URLs
+    type: 'school' | 'personal' | 'experiment';
+    status: 'completed' | 'in-progress' | 'archived';
+    isVisible: boolean;
+    featured: boolean;
+    order: number;
+    updatedAt: string;
 }
 
 const dataDirectory = path.join(process.cwd(), 'data');
@@ -20,7 +27,17 @@ export function getProjects(): Project[] {
         return [];
     }
     const fileContents = fs.readFileSync(projectsFile, 'utf8');
-    return JSON.parse(fileContents);
+    try {
+        const projects = JSON.parse(fileContents);
+        // Sort by order (asc) then updatedAt (desc)
+        return projects.sort((a: Project, b: Project) => {
+            if (a.order !== b.order) return a.order - b.order;
+            return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+        });
+    } catch (e) {
+        console.error("Error parsing projects.json", e);
+        return [];
+    }
 }
 
 export function saveProjects(projects: Project[]): void {
@@ -36,9 +53,13 @@ export function getProject(id: string): Project | undefined {
     return projects.find((p) => p.id === id);
 }
 
-export function createProject(project: Omit<Project, 'id'>): Project {
+export function createProject(project: Omit<Project, 'id' | 'updatedAt'>): Project {
     const projects = getProjects();
-    const newProject = { ...project, id: Date.now().toString() };
+    const newProject: Project = { 
+        ...project, 
+        id: Date.now().toString(),
+        updatedAt: new Date().toISOString()
+    };
     projects.push(newProject);
     saveProjects(projects);
     return newProject;
@@ -49,7 +70,11 @@ export function updateProject(id: string, updates: Partial<Omit<Project, 'id'>>)
     const index = projects.findIndex((p) => p.id === id);
     if (index === -1) return null;
 
-    projects[index] = { ...projects[index], ...updates };
+    projects[index] = { 
+        ...projects[index], 
+        ...updates,
+        updatedAt: new Date().toISOString()
+    };
     saveProjects(projects);
     return projects[index];
 }

@@ -26,10 +26,16 @@ export async function POST(req: Request) {
         const newProject = createProject({
             title: body.title,
             description: body.description,
+            content: body.content || "",
             techStack: body.techStack || [],
             link: body.link || "",
             github: body.github || "",
-            imageUrl: body.imageUrl || "",
+            images: body.images || [],
+            type: body.type || 'personal',
+            status: body.status || 'in-progress',
+            isVisible: body.isVisible ?? false,
+            featured: body.featured ?? false,
+            order: body.order ?? 0,
         });
 
         return NextResponse.json(newProject);

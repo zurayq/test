@@ -1,4 +1,10 @@
 import { Navbar } from "@/components/layout/navbar";
+import dynamic from "next/dynamic";
+
+const BackgroundCanvas = dynamic(
+    () => import("@/components/ui/BackgroundCanvas").then((mod) => mod.BackgroundCanvas),
+    { ssr: false }
+);
 
 export default function PublicLayout({
     children,
@@ -6,7 +12,8 @@ export default function PublicLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className="flex min-h-screen flex-col">
+        <div className="relative flex min-h-screen flex-col">
+            <BackgroundCanvas />
             <Navbar />
             <main className="flex-1 pt-14 container mx-auto px-4 md:px-8">
                 {children}
