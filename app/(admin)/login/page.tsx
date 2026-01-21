@@ -1,76 +1,37 @@
-"use client";
+import { NextRequest, NextResponse } from "next/server";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { Lock } from "lucide-react";
+export async function POST(req: NextRequest) {
+    try {
+        const { password } = await req.json();
+        const adminPassword = process.env.ADMIN_PASSWORD || "secret";
 
-export default function LoginPage() {
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false);
-    const router = useRouter();
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setLoading(true);
-        setError("");
-
-        try {
-            const res = await fetch("/api/auth", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ password }),
-            });
-
-            if (res.ok) {
-                router.push("/admin");
-                router.refresh();
-            } else {
-                setError("Invalid password");
-            }
-        } catch (err) {
-            setError("Something went wrong");
-        } finally {
-            setLoading(false);
+        if (!adminPassword) {
+            console.error("ADMIN_PASSWORD is not set.");
+            return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
         }
-    };
 
-    return (
-        <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-950">
-            <div className="w-full max-w-sm rounded-xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                <div className="mb-6 flex flex-col items-center">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900/30">
-                        <Lock className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-100">Admin Login</h1>
-                    <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">Enter your password to continue</p>
-                </div>
+        if (password === adminPassword) {
+            const response = NextResponse.json({ success: true });
+            // Set a secure HTTP-only cookie
+            response.cookies.set("admin_session", "true", {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === "production",
+                path: "/",
+                sameSite: "strict",
+                maxAge: 60 * 60 * 24 * 7, // 1 week
+            });
+            return response;
+        } else {
+            return NextResponse.json({ error: "Invalid password" }, { status: 401 });
+        }
+    } catch (error) {
+        console.error("Login error:", error);
+        return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+    }
+}
 
-                <form onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                        <input
-                            type="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            className="w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100 dark:placeholder-gray-500"
-                            placeholder="Password"
-                            autoFocus
-                        />
-                    </div>
-
-                    {error && (
-                        <p className="text-sm text-red-600 dark:text-red-400 text-center">{error}</p>
-                    )}
-
-                    <button
-                        type="submit"
-                        disabled={loading}
-                        className="w-full rounded-lg bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-                    >
-                        {loading ? "Signing in..." : "Sign In"}
-                    </button>
-                </form>
-            </div>
-        </div>
-    );
+export async function DELETE() {
+    const response = NextResponse.json({ success: true });
+    response.cookies.delete("admin_session");
+    return response;
 }
