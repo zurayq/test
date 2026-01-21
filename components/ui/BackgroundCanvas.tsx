@@ -14,7 +14,7 @@ export function BackgroundCanvas() {
 
             {/* Blob 1 - Top Left */}
             <motion.div
-                className="absolute -top-[20%] -left-[10%] h-[60vh] w-[60vh] rounded-full bg-blue-400/20 blur-[100px] dark:bg-blue-900/20"
+                className="absolute -top-[20%] -left-[10%] h-[60vh] w-[60vh] rounded-full bg-blue-400/20 blur-[100px]"
                 animate={{
                     x: [0, 50, 0],
                     y: [0, 30, 0],
@@ -29,7 +29,7 @@ export function BackgroundCanvas() {
 
             {/* Blob 2 - Bottom Right */}
             <motion.div
-                className="absolute -bottom-[20%] -right-[10%] h-[70vh] w-[70vh] rounded-full bg-indigo-400/20 blur-[120px] dark:bg-indigo-900/20"
+                className="absolute -bottom-[20%] -right-[10%] h-[70vh] w-[70vh] rounded-full bg-indigo-400/20 blur-[120px]"
                 animate={{
                     x: [0, -30, 0],
                     y: [0, -50, 0],
@@ -44,7 +44,7 @@ export function BackgroundCanvas() {
 
             {/* Blob 3 - Mid Left/Center */}
             <motion.div
-                className="absolute top-[40%] -left-[20%] h-[50vh] w-[50vh] rounded-full bg-cyan-400/10 blur-[80px] dark:bg-cyan-900/10"
+                className="absolute top-[40%] -left-[20%] h-[50vh] w-[50vh] rounded-full bg-cyan-400/10 blur-[80px]"
                 animate={{
                     x: [0, 40, 0],
                     y: [0, -40, 0],
@@ -57,7 +57,7 @@ export function BackgroundCanvas() {
             />
 
             <motion.div
-                className="absolute top-[10%] right-[20%] h-[40vh] w-[40vh] rounded-full bg-purple-400/10 blur-[90px] dark:bg-purple-900/10"
+                className="absolute top-[10%] right-[20%] h-[40vh] w-[40vh] rounded-full bg-purple-400/10 blur-[90px]"
                 animate={{
                     x: [0, -20, 0],
                     y: [0, 20, 0],
