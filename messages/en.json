@@ -1,0 +1,20 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "projects": "Projects",
+        "about": "About",
+        "contact": "Contact",
+        "admin": "Admin"
+    },
+    "Hero": {
+        "title": "Computer Engineering <br> <span >Student & Builder.</span>",
+        "subtitle": "I build software that works. Focusing on scalable web systems, clean architecture, and practical engineering solutions.",
+        "viewWork": "View Work",
+        "contactMe": "Contact Me"
+    },
+    "Resume": {
+        "about": "Motivated Computer Engineering student developing skills in programming and problem solving. Exploring different fields within software development and open to learning new technologies through hands-on experience.",
+        "email": "Email Me",
+        "github": "Check out my code"
+    }
+}

@@ -10,8 +10,8 @@
       "Tailwind CSS",
       "Framer Motion"
     ],
-    "link": "https://example.com",
-    "github": "https://github.com/example/portfolio",
+    "link": "https://zurayq.xyz",
+    "github": "https://github.com/zurayq/portfolio",
     "images": [],
     "type": "personal",
     "status": "in-progress",
@@ -19,5 +19,85 @@
     "featured": true,
     "order": 1,
     "updatedAt": "2025-01-21T12:00:00Z"
+  },
+  {
+    "id": "2",
+    "title": "Article Network Analysis Tool",
+    "description": "A desktop application that parses article and author data to visualize citation and collaboration networks using Graph Theory algorithms.",
+    "content": "## Overview\nDeveloped a desktop application that parses article and author data from JSON files. It builds graph structures representing citation and collaboration networks and implements graph algorithms to compute H-index and betweenness centrality.\n\n### Key Features\n- **Graph Algorithms**: H-index, Betweenness Centrality.\n- **Visualization**: WPF interface for network visualization.\n- **Data Parsing**: Efficient handling of JSON datasets.",
+    "techStack": [
+      "C#",
+      "WPF",
+      ".NET",
+      "Graph Theory"
+    ],
+    "link": "",
+    "github": "https://github.com/zurayq",
+    "images": [],
+    "type": "school",
+    "status": "completed",
+    "isVisible": true,
+    "featured": true,
+    "order": 2,
+    "updatedAt": "2025-01-23T12:00:00Z"
+  },
+  {
+    "id": "3",
+    "title": "LIDAR Scan Visualization",
+    "description": "A visualization program to render spatial points from LIDAR data using SDL graphics.",
+    "content": "## Overview\nParsed LIDAR point data from files and processed angle calculations to create a visualization of 2D/3D space.\n\n### Key Features\n- **SDL3 Rendering**: Efficient graphics rendering.\n- **Data Processing**: Parsed raw LIDAR point data.\n- **Memory Management**: Optimized for smooth performance.",
+    "techStack": [
+      "C",
+      "SDL3",
+      "Memory Management"
+    ],
+    "link": "",
+    "github": "https://github.com/zurayq",
+    "images": [],
+    "type": "school",
+    "status": "completed",
+    "isVisible": true,
+    "featured": false,
+    "order": 3,
+    "updatedAt": "2025-01-23T12:00:00Z"
+  },
+  {
+    "id": "4",
+    "title": "Tower Defense Game",
+    "description": "A simple tower defense game utilizing object-oriented programming principles.",
+    "content": "## Overview\nCreated a simple tower defense game using Java. The project focused on implementing object-oriented patterns for game entities.\n\n### Key Features\n- **Game Logic**: Enemy movement, tower attacks, and scoring.\n- **OOP Design**: Clean class structure.\n- **UI**: Basic user interface for game state.",
+    "techStack": [
+      "Java",
+      "OOP"
+    ],
+    "link": "",
+    "github": "https://github.com/zurayq",
+    "images": [],
+    "type": "school",
+    "status": "completed",
+    "isVisible": true,
+    "featured": false,
+    "order": 4,
+    "updatedAt": "2025-01-23T12:00:00Z"
+  },
+  {
+    "id": "5",
+    "title": "High School Results Web Portal",
+    "description": "A web page to display and search through Libyan high school results for 2025.",
+    "content": "## Overview\nDesigned a web page to display Libyan high school results for 2025. It loads and parses JSON datasets to render student results dynamically.\n\n### Key Features\n- **Dynamic Rendering**: Client-side JSON parsing.\n- **Clean Layout**: Improved visual presentation compared to government sites.",
+    "techStack": [
+      "JavaScript",
+      "JSON",
+      "HTML/CSS"
+    ],
+    "link": "",
+    "github": "https://github.com/zurayq",
+    "images": [],
+    "type": "personal",
+    "status": "completed",
+    "isVisible": true,
+    "featured": false,
+    "order": 5,
+    "updatedAt": "2025-01-23T12:00:00Z"
   }
 ]

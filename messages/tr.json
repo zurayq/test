@@ -1,0 +1,20 @@
+{
+    "Navbar": {
+        "home": "Anasayfa",
+        "projects": "Projeler",
+        "about": "Hakkımda",
+        "contact": "İletişim",
+        "admin": "Yönetici"
+    },
+    "Hero": {
+        "title": "Bilgisayar Mühendisliği Öğrencisi <br> <span >& Geliştirici.</span>",
+        "subtitle": "Çalışan yazılımlar üretiyorum. Ölçeklenebilir web sistemlerine, temiz mimariye ve pratik mühendislik çözümlerine odaklanıyorum.",
+        "viewWork": "Projelerimi Gör",
+        "contactMe": "İletişime Geç"
+    },
+    "Resume": {
+        "about": "Programlama ve problem çözme becerilerini geliştiren motive bir Bilgisayar Mühendisliği öğrencisi. Yazılım geliştirmede farklı alanları keşfediyor ve uygulamalı deneyimle yeni teknolojiler öğrenmeye açık.",
+        "email": "Bana E-posta Yaz",
+        "github": "Kodlarımı İncele"
+    }
+}
