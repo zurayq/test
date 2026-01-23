@@ -21,17 +21,14 @@
     "react-dom": "^18.3.1",
     "tailwind-merge": "^3.4.0"
   },
- "dependencies": {
-    "@radix-ui/react-slot": "^1.2.4",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^12.27.3",
-    "lucide-react": "^0.562.0",
-    "next": "^14.2.0",
-    "next-intl": "^3.26.3",  <-- ADD THIS LINE
-    "eslint-config-next": "^14.2.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "tailwind-merge": "^3.4.0"
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^13.5.6",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
