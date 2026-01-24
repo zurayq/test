@@ -1,16 +1,11 @@
+// File: app/api/auth/login/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
         const { password } = await req.json();
-        const adminPassword = process.env.ADMIN_PASSWORD;
-
-        if (!adminPassword) {
-            console.error("ADMIN_PASSWORD is not set in environment variables.");
-            // For development, if env is missing, maybe allow a default or just block?
-            // Safer to block and log.
-            return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
-        }
+        // Fallback to "secret" if env is missing, but prefer the env var
+        const adminPassword = process.env.ADMIN_PASSWORD || "secret";
 
         if (password === adminPassword) {
             const response = NextResponse.json({ success: true });
