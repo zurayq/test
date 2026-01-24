@@ -1,11 +1,15 @@
+
 "use client";
 
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
+    const t = useTranslations('Hero');
+
     return (
         <section className="py-24 md:py-32 lg:py-40">
             <div className="flex flex-col items-start gap-6">
@@ -15,8 +19,10 @@ export function Hero() {
                     transition={{ duration: 0.5 }}
                 >
                     <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                        Computer Engineering <br className="hidden md:inline" />
-                        <span className="text-muted-foreground">Student & Builder.</span>
+                        {t.rich('title', {
+                            br: () => <br className="hidden md:inline" />,
+                            span: (chunks) => <span className="text-muted-foreground">{chunks}</span>
+                        })}
                     </h1>
                 </motion.div>
 
@@ -27,8 +33,7 @@ export function Hero() {
                     className="max-w-[600px] space-y-4"
                 >
                     <p className="text-lg text-muted-foreground sm:text-xl leading-relaxed">
-                        I build software that works. Focusing on scalable web systems, clean architecture, and practical engineering solutions.
-                        Currently refining this portfolio and exploring distributed systems.
+                        {t('subtitle')}
                     </p>
                 </motion.div>
 
@@ -40,12 +45,12 @@ export function Hero() {
                 >
                     <Button asChild size="lg" className="rounded-full">
                         <Link href="/projects">
-                            View Work <ArrowRight className="ml-2 h-4 w-4" />
+                            {t('viewWork')} <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
                     <Button variant="ghost" size="lg" asChild className="rounded-full">
                         <Link href="/contact">
-                            Contact Me
+                            {t('contactMe')}
                         </Link>
                     </Button>
                 </motion.div>

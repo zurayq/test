@@ -1,11 +1,14 @@
-// File: app/api/auth/login/route.ts
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
     try {
         const { password } = await req.json();
-        // Fallback to "secret" if env is missing, but prefer the env var
         const adminPassword = process.env.ADMIN_PASSWORD || "secret";
+
+        if (!adminPassword) {
+            console.error("ADMIN_PASSWORD is not set.");
+            return NextResponse.json({ error: "Server configuration error" }, { status: 500 });
+        }
 
         if (password === adminPassword) {
             const response = NextResponse.json({ success: true });

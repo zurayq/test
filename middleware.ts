@@ -2,13 +2,9 @@
 import createMiddleware from 'next-intl/middleware';
 import { NextRequest, NextResponse } from "next/server";
 
-const intlMiddleware = createMiddleware({
-    // A list of all locales that are supported
-    locales: ['en', 'ar', 'tr', 'it'],
+import { routing } from './navigation';
 
-    // Used when no locale matches
-    defaultLocale: 'en'
-});
+const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
     const adminSession = request.cookies.get("admin_session");
