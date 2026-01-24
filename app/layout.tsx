@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter } from "next/font/google"; // Use Inter, not Geist
 import "./globals.css";
 
-// Use Inter font instead of Geist
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Portfolio Website",
-  description: "My professional portfolio",
-};
+// ... keep your metadata ...
 
 export default function RootLayout({
   children,
@@ -17,6 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      {/* Use inter.className here */}
       <body className={`${inter.className} antialiased min-h-screen bg-background text-foreground`}>
         {children}
       </body>
