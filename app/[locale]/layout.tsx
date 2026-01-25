@@ -5,15 +5,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 
-const inter = Inter({
-    variable: "--font-inter",
-    subsets: ["latin"],
-});
-
-const robotoMono = Roboto_Mono({
-    variable: "--font-roboto-mono",
-    subsets: ["latin"],
-});
+const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
+const robotoMono = Roboto_Mono({ variable: "--font-roboto-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Abdulwahid Zurayq | Portfolio",
@@ -28,19 +21,15 @@ export default async function LocaleLayout({
     params: { locale: string };
 }) {
     const { locale } = params;
-    if (!['en', 'ar', 'tr', 'it'].includes(locale)) {
-        notFound();
-    }
+    if (!['en', 'ar', 'tr', 'it'].includes(locale)) notFound();
 
     const messages = await getMessages();
     const isRtl = locale === 'ar';
 
     return (
-        // FIX: Removed 'className="dark"' so it is always Light Mode
+        // FIX: Removed 'className="dark"'
         <html lang={locale} dir={isRtl ? 'rtl' : 'ltr'}>
-            <body
-                className={`${inter.variable} ${robotoMono.variable} antialiased min-h-screen bg-background text-foreground`}
-            >
+            <body className={`${inter.variable} ${robotoMono.variable} antialiased min-h-screen bg-background text-foreground`}>
                 <NextIntlClientProvider messages={messages}>
                     {children}
                 </NextIntlClientProvider>

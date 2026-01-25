@@ -5,10 +5,10 @@ import { routing } from './navigation';
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-    // 1. Run translation FIRST to load English text
+    // 1. Run translation FIRST
     const response = intlMiddleware(request);
 
-    // 2. Security Check (Admin Panel)
+    // 2. Admin Security Check
     const { pathname } = request.nextUrl;
     const isAdminPath = pathname.includes('/admin');
     const isLoginPage = pathname.includes('/login');
@@ -25,6 +25,6 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-    // FIX: This matcher catches everything, preventing "Hero.title" bugs
+    // THIS IS THE FIX: Catches all paths so translation always loads
     matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };

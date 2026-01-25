@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "@/navigation";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Typewriter } from "@/components/ui/typewriter";
+import { Typewriter } from "@/components/ui/typewriter"; // Ensure you created this file!
 
 export function Hero() {
     const t = useTranslations('Hero');
@@ -30,8 +30,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
-                    className="max-w-[600px] space-y-4"
-                >
+                    className="max-w-[600px] space-y-4">
                     <p className="text-lg text-muted-foreground sm:text-xl leading-relaxed">
                         {t('subtitle')}
                     </p>
@@ -41,8 +40,7 @@ export function Hero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="flex gap-4 pt-4"
-                >
+                    className="flex gap-4 pt-4">
                     <Button asChild size="lg" className="rounded-full">
                         <Link href="/projects">
                             {t('viewWork')} <ArrowRight className="ml-2 h-4 w-4" />

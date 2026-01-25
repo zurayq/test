@@ -8,30 +8,23 @@ export const Typewriter = ({ words }: { words: string[] }) => {
     const [blink, setBlink] = useState(true);
 
     useEffect(() => {
-        const timeout2 = setTimeout(() => {
-            setBlink((prev) => !prev);
-        }, 500);
+        const timeout2 = setTimeout(() => { setBlink((prev) => !prev); }, 500);
         return () => clearTimeout(timeout2);
     }, [blink]);
 
     useEffect(() => {
         if (index === words.length) return;
-
         if (subIndex === words[index].length + 1 && !reverse) {
-            setReverse(true);
-            return;
+            setReverse(true); return;
         }
-
         if (subIndex === 0 && reverse) {
             setReverse(false);
             setIndex((prev) => (prev + 1) % words.length);
             return;
         }
-
         const timeout = setTimeout(() => {
-            setSubIndex((prev) => prev + (reverse ? 75 : 150));
+            setSubIndex((prev) => prev + (reverse ? -1 : 1));
         }, Math.max(reverse ? 75 : subIndex === words[index].length ? 1000 : 150, parseInt((Math.random() * 350).toString())));
-
         return () => clearTimeout(timeout);
     }, [subIndex, index, reverse, words]);
 
