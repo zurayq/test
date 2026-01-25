@@ -7,6 +7,7 @@
         "admin": "Admin"
     },
     "Hero": {
+        "greeting": "Ciao, sono Abdulwahid.",
         "title": "Studente di Ingegneria Informatica <br> <span >e Sviluppatore.</span>",
         "subtitle": "Costruisco software che funziona. Mi concentro su sistemi web scalabili, architetture pulite e soluzioni ingegneristiche pratiche.",
         "viewWork": "Vedi Lavori",

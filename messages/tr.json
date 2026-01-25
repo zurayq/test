@@ -7,6 +7,7 @@
         "admin": "Yönetici"
     },
     "Hero": {
+        "greeting": "Merhaba, ben Abdulwahid.",
         "title": "Bilgisayar Mühendisliği Öğrencisi <br> <span >& Geliştirici.</span>",
         "subtitle": "Çalışan yazılımlar üretiyorum. Ölçeklenebilir web sistemlerine, temiz mimariye ve pratik mühendislik çözümlerine odaklanıyorum.",
         "viewWork": "Projelerimi Gör",
