@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 export const RESUME_DATA = {
     name: "ABDULWAHID ZURAYQ",

@@ -1,12 +1,11 @@
 "use client";
 
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/navigation"; // <--- MUST import from here
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useTransition } from "react";
 
 export function LanguageSwitcher() {
-    const t = useTranslations('Navbar'); // Optional: if you want to translate "Language" label
     const locale = useLocale();
     const router = useRouter();
     const pathname = usePathname();

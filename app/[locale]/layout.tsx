@@ -15,19 +15,58 @@ const robotoMono = Roboto_Mono({
     subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-    title: "Portfolio",
-    description: "Personal Portfolio",
-};
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+    const { locale } = params;
+
+    return {
+        title: {
+            default: "Computer Engineering Student & Builder",
+            template: "%s | Portfolio"
+        },
+        description: "Computer Engineering student building scalable web systems, clean architecture, and practical engineering solutions.",
+        keywords: ["Computer Engineering", "Software Development", "Web Development", "Portfolio", "Projects"],
+        authors: [{ name: "Your Name" }], // Update with your name
+        creator: "Your Name", // Update with your name
+        openGraph: {
+            type: "website",
+            locale: locale,
+            url: "https://your-domain.com", // Update with your domain
+            siteName: "Portfolio",
+            title: "Computer Engineering Student & Builder",
+            description: "Computer Engineering student building scalable web systems, clean architecture, and practical engineering solutions.",
+            images: [
+                {
+                    url: "/og-image.jpg", // Add your OG image
+                    width: 1200,
+                    height: 630,
+                    alt: "Portfolio",
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Computer Engineering Student & Builder",
+            description: "Computer Engineering student building scalable web systems, clean architecture, and practical engineering solutions.",
+            images: ["/og-image.jpg"], // Add your Twitter image
+        },
+        robots: {
+            index: true,
+            follow: true,
+        },
+        icons: {
+            icon: "/favicon.ico",
+        },
+    };
+}
 
 export default async function LocaleLayout({
     children,
     params
 }: {
     children: React.ReactNode;
-    params: { locale: string };
+    params: Promise<{ locale: string }>;
 }) {
-    const { locale } = params;
+    const { locale } = await params;
     // Ensure that the incoming `locale` is valid
     if (!['en', 'ar', 'tr', 'it'].includes(locale)) {
         notFound();

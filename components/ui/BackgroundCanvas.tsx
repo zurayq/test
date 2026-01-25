@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
 
 export function BackgroundCanvas() {
     // Animation: Move very slowly, rotate gently.

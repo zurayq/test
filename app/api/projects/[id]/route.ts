@@ -25,7 +25,7 @@ export async function PUT(req: Request, { params }: Props) {
     return NextResponse.json(updated);
 }
 
-export async function DELETE(req: Request, { params }: Props) {
+export async function DELETE(_req: Request, { params }: Props) {
     const cookieStore = await cookies();
     const session = cookieStore.get("admin_session");
     if (!session) {
@@ -41,7 +41,7 @@ export async function DELETE(req: Request, { params }: Props) {
     return NextResponse.json({ success: true });
 }
 
-export async function GET(req: Request, { params }: Props) {
+export async function GET(_req: Request, { params }: Props) {
     const { id } = await params;
     const project = getProject(id);
 
