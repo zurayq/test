@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import { motion } from "framer-motion";
 import { Link } from "@/navigation";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Typewriter } from "@/components/ui/typewriter";
 
 export function Hero() {
     const t = useTranslations('Hero');
@@ -19,10 +19,10 @@ export function Hero() {
                     transition={{ duration: 0.5 }}
                 >
                     <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                        {t.rich('title', {
-                            br: () => <br className="hidden md:inline" />,
-                            span: (chunks) => <span className="text-muted-foreground">{chunks}</span>
-                        })}
+                        {t('title')} <br className="hidden md:inline" />
+                        <span className="text-primary">
+                            <Typewriter words={["Developer", "Designer", "Student"]} />
+                        </span>
                     </h1>
                 </motion.div>
 

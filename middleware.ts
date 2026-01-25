@@ -22,8 +22,8 @@ export default function middleware(request: NextRequest) {
 
         if (!adminSession) {
             // User is not logged in. Redirect them to login.
-            // We assume the first part of the path is the locale (e.g. 'en', 'ar')
-            const locale = pathname.split('/')[1] || 'en';
+            // Get locale from path (e.g. /en/...) or default to 'en'
+            const locale = pathname.match(/^\/([a-z]{2})/)?.[1] || 'en';
             return NextResponse.redirect(new URL(`/${locale}/login`, request.url));
         }
     }
