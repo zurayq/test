@@ -13,7 +13,7 @@ export default function AboutPage() {
                 <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
                     About Me
                 </h1>
-                <div className="prose prose-lg prose-gray dark:prose-invert">
+                <div className="prose prose-lg prose-gray">
                     <p className="leading-relaxed text-muted-foreground">
                         {RESUME_DATA.about}
                     </p>

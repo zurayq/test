@@ -21,9 +21,9 @@ export default function ContactPage() {
             <div className="grid gap-6">
                 <a
                     href={`mailto:${RESUME_DATA.contact.email}`}
-                    className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-blue-500 hover:shadow-sm transition-all dark:border-gray-800 dark:bg-gray-900/50 dark:hover:border-blue-500"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-blue-500 hover:shadow-sm transition-all"
                 >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-900/20 dark:text-blue-400">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-blue-50 text-blue-600">
                         <Mail className="h-6 w-6" />
                     </div>
                     <div>
@@ -38,9 +38,9 @@ export default function ContactPage() {
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-400 hover:shadow-sm transition-all dark:border-gray-800 dark:bg-gray-900/50 dark:hover:border-gray-600"
+                        className="flex items-center gap-4 p-4 rounded-xl border border-gray-200 bg-white hover:border-gray-400 hover:shadow-sm transition-all"
                     >
-                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-gray-900">
                             <social.icon className="h-6 w-6" />
                         </div>
                         <div>
@@ -51,7 +51,7 @@ export default function ContactPage() {
                 ))}
             </div>
 
-            <div className="mt-12 p-6 rounded-xl bg-secondary/30 dark:bg-secondary/10 border border-secondary">
+            <div className="mt-12 p-6 rounded-xl bg-secondary/30 border border-secondary">
                 <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
                     Availability

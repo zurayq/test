@@ -85,11 +85,11 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
                 <div className="flex items-center gap-4">
                     <Link
                         href="/admin"
-                        className="rounded-full p-2 text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                        className="rounded-full p-2 text-gray-400 hover:bg-gray-100 transition-colors"
                     >
                         <ArrowLeft className="h-5 w-5" />
                     </Link>
-                    <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                    <h1 className="text-2xl font-bold text-gray-900">
                         {isEditing ? "Edit Project" : "New Project"}
                     </h1>
                 </div>
@@ -105,40 +105,40 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
 
             <div className="grid gap-6 md:grid-cols-2">
                 {/* Main Info */}
-                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 md:col-span-2">
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Core Details</h2>
+                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:col-span-2">
+                    <h2 className="text-lg font-semibold text-gray-900">Core Details</h2>
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Project Title</label>
+                            <label className="block text-sm font-medium text-gray-700">Project Title</label>
                             <input
                                 type="text"
                                 name="title"
                                 required
                                 value={formData.title}
                                 onChange={handleChange}
-                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100"
+                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                                 placeholder="e.g. Portfolio Website"
                             />
                         </div>
                         <div className="col-span-2">
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Short Description</label>
+                            <label className="block text-sm font-medium text-gray-700">Short Description</label>
                             <input
                                 type="text"
                                 name="description"
                                 required
                                 value={formData.description}
                                 onChange={handleChange}
-                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100"
+                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                                 placeholder="Brief summary for list view"
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Type</label>
+                            <label className="block text-sm font-medium text-gray-700">Type</label>
                             <select
                                 name="type"
                                 value={formData.type}
                                 onChange={handleChange}
-                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100 dark:bg-gray-900"
+                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                             >
                                 <option value="personal">Personal</option>
                                 <option value="school">School</option>
@@ -146,12 +146,12 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
                             </select>
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Status</label>
+                            <label className="block text-sm font-medium text-gray-700">Status</label>
                             <select
                                 name="status"
                                 value={formData.status}
                                 onChange={handleChange}
-                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100 dark:bg-gray-900"
+                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                             >
                                 <option value="in-progress">In Progress</option>
                                 <option value="completed">Completed</option>
@@ -162,10 +162,10 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
                 </div>
 
                 {/* Content & Tech */}
-                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 md:col-span-2">
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Content & Tech</h2>
+                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm md:col-span-2">
+                    <h2 className="text-lg font-semibold text-gray-900">Content & Tech</h2>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                        <label className="block text-sm font-medium text-gray-700">
                             Detailed Content (Markdown)
                         </label>
                         <p className="mb-2 text-xs text-gray-500">Supports standard markdown.</p>
@@ -174,53 +174,53 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
                             rows={10}
                             value={formData.content}
                             onChange={handleChange}
-                            className="block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 font-mono text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100"
+                            className="block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 font-mono text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                             placeholder="# Project Details..."
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Tech Stack</label>
+                        <label className="block text-sm font-medium text-gray-700">Tech Stack</label>
                         <input
                             type="text"
                             value={techInput}
                             onChange={(e) => setTechInput(e.target.value)}
-                            className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100"
+                            className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                             placeholder="Next.js, TypeScript, Tailwind (comma separated)"
                         />
                     </div>
                 </div>
 
                 {/* Links & Meta */}
-                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Links</h2>
+                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                    <h2 className="text-lg font-semibold text-gray-900">Links</h2>
                     <div className="space-y-4">
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Live URL</label>
+                            <label className="block text-sm font-medium text-gray-700">Live URL</label>
                             <input
                                 type="url"
                                 name="link"
                                 value={formData.link}
                                 onChange={handleChange}
-                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100"
+                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                                 placeholder="https://..."
                             />
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">GitHub URL</label>
+                            <label className="block text-sm font-medium text-gray-700">GitHub URL</label>
                             <input
                                 type="url"
                                 name="github"
                                 value={formData.github}
                                 onChange={handleChange}
-                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100"
+                                className="mt-1 block w-full rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                                 placeholder="https://github.com/..."
                             />
                         </div>
                     </div>
                 </div>
 
-                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900">
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Settings</h2>
+                <div className="space-y-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+                    <h2 className="text-lg font-semibold text-gray-900">Settings</h2>
                     <div className="space-y-4">
                         <div className="flex items-center gap-2">
                             <input
@@ -229,9 +229,9 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
                                 name="isVisible"
                                 checked={formData.isVisible}
                                 onChange={handleChange}
-                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900"
+                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                             />
-                            <label htmlFor="isVisible" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                            <label htmlFor="isVisible" className="text-sm font-medium text-gray-700">
                                 Visible on Public Site
                             </label>
                         </div>
@@ -242,20 +242,20 @@ export default function ProjectForm({ initialData, isEditing = false }: ProjectF
                                 name="featured"
                                 checked={formData.featured}
                                 onChange={handleChange}
-                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900"
+                                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
                             />
-                            <label htmlFor="featured" className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                            <label htmlFor="featured" className="text-sm font-medium text-gray-700">
                                 Featured Project
                             </label>
                         </div>
                         <div>
-                            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">Sort Order</label>
+                            <label className="block text-sm font-medium text-gray-700">Sort Order</label>
                             <input
                                 type="number"
                                 name="order"
                                 value={formData.order}
                                 onChange={handleChange}
-                                className="mt-1 block w-24 rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:text-gray-100"
+                                className="mt-1 block w-24 rounded-lg border border-gray-300 bg-transparent px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
                             />
                             <p className="mt-1 text-xs text-gray-500">Lower numbers appear first.</p>
                         </div>

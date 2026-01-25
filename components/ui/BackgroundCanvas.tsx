@@ -7,9 +7,9 @@ export function BackgroundCanvas() {
     // Respects reduced motion via CSS media query or motion's transition settings typically.
 
     return (
-        <div className="fixed inset-0 z-[-1] overflow-hidden bg-gray-50 dark:bg-gray-950 pointer-events-none">
+        <div className="fixed inset-0 z-[-1] overflow-hidden bg-gray-50 pointer-events-none">
             {/* Base gradient */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/50 dark:to-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/50" />
 
             {/* Blob 1 - Top Left */}
             <motion.div

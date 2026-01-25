@@ -41,7 +41,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                                 {project.title}
                             </h1>
                             {project.status === 'in-progress' && (
-                                <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-800 dark:bg-amber-900/30 dark:text-amber-400">
+                                <span className="rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-800">
                                     In Progress
                                 </span>
                             )}
@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </div>
             </header>
 
-            <div className="prose prose-gray dark:prose-invert max-w-none">
+            <div className="prose prose-gray max-w-none">
                 {/* Content Rendering */}
                 {/* Simple mapping for now since we don't have a markdown renderer installed */}
                 {project.content ? (

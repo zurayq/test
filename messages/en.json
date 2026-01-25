@@ -4,17 +4,18 @@
         "projects": "Projects",
         "about": "About",
         "contact": "Contact",
-        "admin": "Admin"
+        "admin": "Admin Panel"
     },
     "Hero": {
-        "title": "Computer Engineering <br> <span >Student & Builder.</span>",
-        "subtitle": "I build software that works. Focusing on scalable web systems, clean architecture, and practical engineering solutions.",
-        "viewWork": "View Work",
-        "contactMe": "Contact Me"
+        "greeting": "Hi, I'm Abdulwahid.",
+        "title": "Computer Engineering <br> <span>Student & Game Dev.</span>",
+        "subtitle": "I build things that work. Creator of 'Cyber Valley' and mentor for Lybotics. I focus on C#, Godot, and scalable web systems.",
+        "viewWork": "See My Projects",
+        "contactMe": "Get in Touch"
     },
     "Resume": {
-        "about": "Motivated Computer Engineering student developing skills in programming and problem solving. Exploring different fields within software development and open to learning new technologies through hands-on experience.",
+        "about": "I am a second-year Computer Engineering student from Tripoli, Libya. I have a passion for Game Development (Godot/C#) and software architecture. I also work as a freelance English teacher and have led robotics teams to international competitions.",
         "email": "Email Me",
-        "github": "Check out my code"
+        "github": "Check my GitHub"
     }
 }
