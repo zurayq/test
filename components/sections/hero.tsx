@@ -19,7 +19,7 @@ export function Hero() {
                     transition={{ duration: 0.5 }}
                 >
                     <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                        {t('title')} <br className="hidden md:inline" />
+                        {t('greeting')} <br />
                         <span className="text-primary">
                             <Typewriter words={["Developer", "Designer", "Student"]} />
                         </span>

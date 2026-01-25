@@ -7,7 +7,6 @@ export const Typewriter = ({ words }: { words: string[] }) => {
     const [reverse, setReverse] = useState(false);
     const [blink, setBlink] = useState(true);
 
-    // Blinking cursor effect
     useEffect(() => {
         const timeout2 = setTimeout(() => {
             setBlink((prev) => !prev);
@@ -15,7 +14,6 @@ export const Typewriter = ({ words }: { words: string[] }) => {
         return () => clearTimeout(timeout2);
     }, [blink]);
 
-    // Typing logic
     useEffect(() => {
         if (index === words.length) return;
 
@@ -31,7 +29,7 @@ export const Typewriter = ({ words }: { words: string[] }) => {
         }
 
         const timeout = setTimeout(() => {
-            setSubIndex((prev) => prev + (reverse ? -1 : 1));
+            setSubIndex((prev) => prev + (reverse ? 75 : 150));
         }, Math.max(reverse ? 75 : subIndex === words[index].length ? 1000 : 150, parseInt((Math.random() * 350).toString())));
 
         return () => clearTimeout(timeout);

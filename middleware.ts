@@ -5,24 +5,17 @@ import { routing } from './navigation';
 const intlMiddleware = createMiddleware(routing);
 
 export default function middleware(request: NextRequest) {
-    // 1. Run the standard translation middleware first
+    // 1. Run translation FIRST to load English text
     const response = intlMiddleware(request);
 
-    // 2. Check for Admin Security AFTER translation is handled
-    // We check the path to see if they are trying to access /admin
+    // 2. Security Check (Admin Panel)
     const { pathname } = request.nextUrl;
-
-    // Check if path contains '/admin' (e.g. /en/admin, /ar/admin)
-    // AND ensure they are not already on the login page
     const isAdminPath = pathname.includes('/admin');
     const isLoginPage = pathname.includes('/login');
 
     if (isAdminPath && !isLoginPage) {
         const adminSession = request.cookies.get("admin_session");
-
         if (!adminSession) {
-            // User is not logged in. Redirect them to login.
-            // Get locale from path (e.g. /en/...) or default to 'en'
             const locale = pathname.match(/^\/([a-z]{2})/)?.[1] || 'en';
             return NextResponse.redirect(new URL(`/${locale}/login`, request.url));
         }
@@ -32,6 +25,6 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-    // Match all pathnames except for /api, /_next, /_vercel, and files with extensions (e.g. favicon.ico)
+    // FIX: This matcher catches everything, preventing "Hero.title" bugs
     matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
