@@ -40,7 +40,7 @@ export default async function LocaleLayout({
     const isRtl = locale === 'ar';
 
     return (
-        <html lang={locale} dir={isRtl ? 'rtl' : 'ltr'} className="dark">
+        <html lang={locale} dir={isRtl ? 'rtl' : 'ltr'}>
             <body
                 className={`${inter.variable} ${robotoMono.variable} antialiased min-h-screen bg-background text-foreground`}
             >

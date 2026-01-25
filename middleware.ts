@@ -32,6 +32,6 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-    // Match only internationalized pathnames
-    matcher: ['/', '/(ar|en|tr|it)/:path*']
+    // Match all pathnames except for /api, /_next, /_vercel, and files with extensions (e.g. favicon.ico)
+    matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };
