@@ -9,7 +9,7 @@
     "Hero": {
         "greeting": "Hi, I'm Abdulwahid.",
         "title": "Computer Engineering <br> <span>Student & Game Dev.</span>",
-        "subtitle": "I build things that work. Creator of 'Cyber Valley' and mentor for Lybotics. I focus on C#, Godot, and scalable web systems.",
+        "subtitle": "I build things that work. Into web dev, clean code, and practical solutions.",
         "viewWork": "See My Projects",
         "contactMe": "Get in Touch"
     },
@@ -18,4 +18,5 @@
         "email": "Email Me",
         "github": "Check my GitHub"
     }
+
 }
