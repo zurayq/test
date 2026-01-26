@@ -9,7 +9,7 @@
     "Hero": {
         "greeting": "Ciao, sono Abdulwahid.",
         "title": "Studente di Ingegneria Informatica <br> <span >e Sviluppatore.</span>",
-        "subtitle": "Costruisco software che funziona. Mi concentro su sistemi web scalabili, architetture pulite e soluzioni ingegneristiche pratiche.",
+        "subtitle": "Creo cose che funzionano. Mi interessa il web development, il codice pulito e soluzioni pratiche.",
         "viewWork": "Vedi Lavori",
         "contactMe": "Contattami"
     },
@@ -18,4 +18,5 @@
         "email": "Scrivimi",
         "github": "Guarda il mio codice"
     }
+
 }
