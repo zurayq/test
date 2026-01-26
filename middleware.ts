@@ -4,5 +4,5 @@ import { routing } from './navigation';
 export default createMiddleware(routing);
 
 export const config = {
-    matcher: ['/', '/(ar|en|tr)/:path*']
+    matcher: ['/', '/(en|ar|tr|it)/:path*']
 };
