@@ -9,7 +9,7 @@
     "Hero": {
         "greeting": "Merhaba, ben Abdulwahid.",
         "title": "Bilgisayar Mühendisliği Öğrencisi <br> <span >& Geliştirici.</span>",
-        "subtitle": "Çalışan yazılımlar üretiyorum. Ölçeklenebilir web sistemlerine, temiz mimariye ve pratik mühendislik çözümlerine odaklanıyorum.",
+        "subtitle": "Çalışan şeyler geliştiriyorum. Web geliştirme, temiz kod ve pratik çözümlerle ilgileniyorum.",
         "viewWork": "Projelerimi Gör",
         "contactMe": "İletişime Geç"
     },
@@ -18,4 +18,5 @@
         "email": "Bana E-posta Yaz",
         "github": "Kodlarımı İncele"
     }
+
 }
