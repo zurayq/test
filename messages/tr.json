@@ -17,6 +17,38 @@
         "about": "Programlama ve problem çözme becerilerini geliştiren motive bir Bilgisayar Mühendisliği öğrencisi. Yazılım geliştirmede farklı alanları keşfediyor ve uygulamalı deneyimle yeni teknolojiler öğrenmeye açık.",
         "email": "Bana E-posta Yaz",
         "github": "Kodlarımı İncele"
+    },
+    "About": {
+        "title": "Hakkımda",
+        "experience": "Deneyim",
+        "education": "Eğitim",
+        "skills": "Teknik Yetenekler",
+        "languages": "Diller",
+        "cta": "Birlikte çalışalım mı?",
+        "getInTouch": "İletişime Geç",
+        "githubProfile": "GitHub Profili"
+    },
+    "Contact": {
+        "title": "İletişime Geç",
+        "subtitle": "Şu anda işbirliği projeleri ve yazılım geliştirme fırsatlarına açığım. Çekinmeden iletişime geçin!",
+        "emailMe": "E-posta Gönder",
+        "checkOut": "{name} hesabıma göz at",
+        "availability": "Uygunluk",
+        "availabilityText": "Şu anda Kocaeli Üniversitesi'nde öğrenciyim. E-posta ile en hızlı cevap veriyorum."
+    },
+    "Projects": {
+        "title": "Seçilmiş Çalışmalar",
+        "subtitle": "Web sistemleri, donanım ve tasarımı keşfeden bir proje koleksiyonu.",
+        "filterAll": "Hepsi",
+        "filterPersonal": "Kişisel",
+        "filterSchool": "Okul",
+        "filterExperiment": "Deney",
+        "noResults": "Bu kategori için proje bulunamadı.",
+        "inProgress": "Devam Ediyor"
+    },
+    "Footer": {
+        "builtBy": "{name} tarafından yapıldı.",
+        "sourceCode": "Kaynak kodu {github} üzerinde.",
+        "github": "GitHub"
     }
-
 }

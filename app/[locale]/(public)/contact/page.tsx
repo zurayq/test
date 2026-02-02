@@ -1,20 +1,18 @@
+"use client";
 
 import { RESUME_DATA } from "@/data/resume";
 import { Mail, Calendar } from "lucide-react";
-
-export const metadata = {
-    title: "Contact | Portfolio",
-    description: "Get in touch for collaborations or opportunities.",
-};
+import { useTranslations } from "next-intl";
 
 export default function ContactPage() {
+    const t = useTranslations('Contact');
+
     return (
         <div className="max-w-2xl mx-auto py-12 md:py-24">
             <div className="space-y-6 mb-12">
-                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">Get in Touch</h1>
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">{t('title')}</h1>
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                    I'm currently open to collaborative projects and opportunities in software development.
-                    Feel free to reach out!
+                    {t('subtitle')}
                 </p>
             </div>
 
@@ -27,7 +25,7 @@ export default function ContactPage() {
                         <Mail className="h-6 w-6" />
                     </div>
                     <div>
-                        <h3 className="font-semibold text-foreground">Email Me</h3>
+                        <h3 className="font-semibold text-foreground">{t('emailMe')}</h3>
                         <p className="text-muted-foreground">{RESUME_DATA.contact.email}</p>
                     </div>
                 </a>
@@ -45,7 +43,7 @@ export default function ContactPage() {
                         </div>
                         <div>
                             <h3 className="font-semibold text-foreground">{social.name}</h3>
-                            <p className="text-muted-foreground">Check out my {social.name}</p>
+                            <p className="text-muted-foreground">{t('checkOut', { name: social.name })}</p>
                         </div>
                     </a>
                 ))}
@@ -54,11 +52,10 @@ export default function ContactPage() {
             <div className="mt-12 p-6 rounded-xl bg-secondary/30 border border-secondary">
                 <h3 className="font-semibold text-foreground mb-2 flex items-center gap-2">
                     <Calendar className="h-4 w-4" />
-                    Availability
+                    {t('availability')}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                    Currently studying at {RESUME_DATA.education[0].school}.
-                    Most responsive via email.
+                    {t('availabilityText')}
                 </p>
             </div>
         </div>

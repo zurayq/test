@@ -1,17 +1,21 @@
+"use client";
 
 import { RESUME_DATA } from "@/data/resume";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function AboutPage() {
+    const t = useTranslations('About');
+
     return (
         <div className="max-w-3xl py-12 md:py-24 mx-auto space-y-20">
             {/* Header / Summary */}
             <section className="space-y-6">
                 <h1 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
-                    About Me
+                    {t('title')}
                 </h1>
                 <div className="prose prose-lg prose-gray">
                     <p className="leading-relaxed text-muted-foreground">
@@ -22,7 +26,7 @@ export default function AboutPage() {
 
             {/* Experience */}
             <section className="space-y-8">
-                <h2 className="text-2xl font-semibold tracking-tight text-foreground">Experience</h2>
+                <h2 className="text-2xl font-semibold tracking-tight text-foreground">{t('experience')}</h2>
                 <div className="space-y-10">
                     {RESUME_DATA.work.map((work) => (
                         <div key={work.company} className="flex flex-col gap-2">
@@ -48,7 +52,7 @@ export default function AboutPage() {
 
             {/* Education */}
             <section className="space-y-8">
-                <h2 className="text-2xl font-semibold tracking-tight text-foreground">Education</h2>
+                <h2 className="text-2xl font-semibold tracking-tight text-foreground">{t('education')}</h2>
                 <div className="space-y-6">
                     {RESUME_DATA.education.map((edu) => (
                         <div key={edu.school} className="flex flex-col gap-1">
@@ -64,7 +68,7 @@ export default function AboutPage() {
 
             {/* Skills */}
             <section className="space-y-8">
-                <h2 className="text-2xl font-semibold tracking-tight text-foreground">Technical Skills</h2>
+                <h2 className="text-2xl font-semibold tracking-tight text-foreground">{t('skills')}</h2>
                 <div className="flex flex-wrap gap-2">
                     {RESUME_DATA.skills.map((skill) => (
                         <Badge key={skill} variant="outline" className="text-sm py-1">
@@ -76,7 +80,7 @@ export default function AboutPage() {
 
             {/* Languages */}
             <section className="space-y-8">
-                <h2 className="text-2xl font-semibold tracking-tight text-foreground">Languages</h2>
+                <h2 className="text-2xl font-semibold tracking-tight text-foreground">{t('languages')}</h2>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                     {RESUME_DATA.languages.map((lang) => (
                         <div key={lang.name} className="flex flex-col p-3 rounded-lg border bg-card text-card-foreground">
@@ -89,16 +93,16 @@ export default function AboutPage() {
 
             {/* CTA */}
             <div className="pt-8">
-                <p className="text-lg font-medium mb-4">Interested in working together?</p>
+                <p className="text-lg font-medium mb-4">{t('cta')}</p>
                 <div className="flex gap-4">
                     <Button asChild size="lg">
                         <Link href="/contact">
-                            Get in Touch
+                            {t('getInTouch')}
                         </Link>
                     </Button>
                     <Button variant="outline" size="lg" asChild>
                         <a href={RESUME_DATA.contact.social[0].url} target="_blank" rel="noopener noreferrer">
-                            GitHub Profile <ArrowRight className="ml-2 h-4 w-4" />
+                            {t('githubProfile')} <ArrowRight className="ml-2 h-4 w-4" />
                         </a>
                     </Button>
                 </div>

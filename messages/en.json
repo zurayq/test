@@ -17,6 +17,38 @@
         "about": "I am a second-year Computer Engineering student from Tripoli, Libya. I have a passion for Game Development (Godot/C#) and software architecture. I also work as a freelance English teacher and have led robotics teams to international competitions.",
         "email": "Email Me",
         "github": "Check my GitHub"
+    },
+    "About": {
+        "title": "About Me",
+        "experience": "Experience",
+        "education": "Education",
+        "skills": "Technical Skills",
+        "languages": "Languages",
+        "cta": "Interested in working together?",
+        "getInTouch": "Get in Touch",
+        "githubProfile": "GitHub Profile"
+    },
+    "Contact": {
+        "title": "Get in Touch",
+        "subtitle": "I'm currently open to collaborative projects and opportunities in software development. Feel free to reach out!",
+        "emailMe": "Email Me",
+        "checkOut": "Check out my {name}",
+        "availability": "Availability",
+        "availabilityText": "Currently studying at Kocaeli University. Most responsive via email."
+    },
+    "Projects": {
+        "title": "Selected Work",
+        "subtitle": "A collection of projects exploring web systems, hardware, and design.",
+        "filterAll": "All",
+        "filterPersonal": "Personal",
+        "filterSchool": "School",
+        "filterExperiment": "Experiment",
+        "noResults": "No projects found for this category.",
+        "inProgress": "In Progress"
+    },
+    "Footer": {
+        "builtBy": "Built by {name}.",
+        "sourceCode": "The source code is available on {github}.",
+        "github": "GitHub"
     }
-
 }

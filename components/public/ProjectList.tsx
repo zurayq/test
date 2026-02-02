@@ -6,26 +6,37 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 
-export function ProjectList({ initialProjects }: { initialProjects: Project[] }) {
+type Labels = {
+    all: string;
+    personal: string;
+    school: string;
+    experiment: string;
+    noResults: string;
+    inProgress: string;
+};
+
+export function ProjectList({ initialProjects, labels }: { initialProjects: Project[]; labels: Labels }) {
     const [filter, setFilter] = useState<'all' | 'personal' | 'school' | 'experiment'>('all');
 
     const filtered = initialProjects.filter(p => filter === 'all' || p.type === filter);
+
+    const filterTypes: Array<'all' | 'personal' | 'school' | 'experiment'> = ['all', 'personal', 'school', 'experiment'];
 
     return (
         <div className="space-y-12">
             {/* Filter Tabs */}
             <div className="flex justify-center">
                 <div className="inline-flex rounded-full bg-gray-100 p-1">
-                    {['all', 'personal', 'school', 'experiment'].map((type) => (
+                    {filterTypes.map((type) => (
                         <button
                             key={type}
-                            onClick={() => setFilter(type as any)}
+                            onClick={() => setFilter(type)}
                             className={`rounded-full px-5 py-2 text-sm font-medium transition-all ${filter === type
-                                    ? 'bg-white text-gray-900 shadow-sm'
-                                    : 'text-gray-500 hover:text-gray-900'
+                                ? 'bg-white text-gray-900 shadow-sm'
+                                : 'text-gray-500 hover:text-gray-900'
                                 }`}
                         >
-                            {type.charAt(0).toUpperCase() + type.slice(1)}
+                            {labels[type]}
                         </button>
                     ))}
                 </div>
@@ -58,7 +69,7 @@ export function ProjectList({ initialProjects }: { initialProjects: Project[] })
                                     {project.type}
                                 </span>
                                 {project.status === 'in-progress' && (
-                                    <span className="flex h-2 w-2 rounded-full bg-amber-400" title="In Progress" />
+                                    <span className="flex h-2 w-2 rounded-full bg-amber-400" title={labels.inProgress} />
                                 )}
                             </div>
 
@@ -96,7 +107,7 @@ export function ProjectList({ initialProjects }: { initialProjects: Project[] })
 
             {filtered.length === 0 && (
                 <div className="text-center py-20 text-gray-500">
-                    No projects found for this category.
+                    {labels.noResults}
                 </div>
             )}
         </div>

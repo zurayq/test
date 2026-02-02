@@ -17,6 +17,38 @@
         "about": "Studente di Ingegneria Informatica motivato nello sviluppo di competenze di programmazione e risoluzione problemi. Esploro diversi campi dello sviluppo software e sono aperto all'apprendimento di nuove tecnologie attraverso l'esperienza pratica.",
         "email": "Scrivimi",
         "github": "Guarda il mio codice"
+    },
+    "About": {
+        "title": "Chi Sono",
+        "experience": "Esperienza",
+        "education": "Formazione",
+        "skills": "Competenze Tecniche",
+        "languages": "Lingue",
+        "cta": "Vuoi lavorare insieme?",
+        "getInTouch": "Contattami",
+        "githubProfile": "Profilo GitHub"
+    },
+    "Contact": {
+        "title": "Contattami",
+        "subtitle": "Sono aperto a progetti collaborativi e opportunità nello sviluppo software. Sentiti libero di contattarmi!",
+        "emailMe": "Scrivimi via Email",
+        "checkOut": "Dai un'occhiata al mio {name}",
+        "availability": "Disponibilità",
+        "availabilityText": "Attualmente studio all'Università di Kocaeli. Rispondo più velocemente via email."
+    },
+    "Projects": {
+        "title": "Progetti Selezionati",
+        "subtitle": "Una raccolta di progetti che esplorano sistemi web, hardware e design.",
+        "filterAll": "Tutti",
+        "filterPersonal": "Personali",
+        "filterSchool": "Università",
+        "filterExperiment": "Esperimenti",
+        "noResults": "Nessun progetto trovato per questa categoria.",
+        "inProgress": "In Corso"
+    },
+    "Footer": {
+        "builtBy": "Creato da {name}.",
+        "sourceCode": "Il codice sorgente è disponibile su {github}.",
+        "github": "GitHub"
     }
-
 }
